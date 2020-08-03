@@ -18,7 +18,18 @@ const commonConfig = {
       chunks: ['index'],
       minify: false
     })
-  ]
+  ],
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader'
+        }
+      }
+    ]
+  }
 }
 
 module.exports = commonConfig
